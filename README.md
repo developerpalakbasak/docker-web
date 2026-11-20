@@ -39,6 +39,22 @@ go build -ldflags="-s -w" -trimpath -o docker-web
 - **`-w`**: Omits DWARF debug information (reduces file size by ~35%).
 - **`-trimpath`**: Removes internal directory and source file paths from the binary.
 
+### 📦 Install as a System CLI Tool:
+> If you want to use this as a global CLI tool from any directory in your terminal (without `./`):
+
+```bash
+sudo mv docker-web /usr/local/bin
+```
+
+Once moved, you can run it anywhere simply as `docker-web` (runs on default port **5000**):
+```bash
+# Starts on default port 5000
+docker-web
+
+# Or specify a custom port
+docker-web --port 8000
+```
+
 ---
 
 ## 🚀 Quick Start
@@ -99,13 +115,18 @@ You can pass the port in any of the following ways:
 
 ---
 
-### 💡 Make `docker-web` available everywhere:
-If you want to run `docker-web --port 8000` from any folder without typing `./`:
+### 💡 Make `docker-web` available everywhere (CLI Tool):
+> If you want to use this as a system CLI tool from any folder without typing `./`:
+
 ```bash
-sudo cp docker-web /usr/local/bin/
+sudo mv docker-web /usr/local/bin
 ```
 Then simply run:
 ```bash
+# Starts on default port 5000
+docker-web
+
+# Or specify a custom port
 docker-web --port 8000
 ```
 
